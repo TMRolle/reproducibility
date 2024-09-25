@@ -4,6 +4,12 @@ variable "project_id" {
   nullable = false
 }
 
+variable "reservation" {
+  description = "Reservation to utilize, i.e. projects/12345/reservations/my-reservation"
+  type = string
+  nullable = false
+}
+
 variable "region" {
   description = "The region to deploy the GKE cluster in."
   type = string
@@ -23,4 +29,10 @@ variable "node_count" {
   type = number
   default = 4
   nullable = false
+}
+
+variable "enable_gke_dashboard" {
+description = "Create GKE dashboard to visualize cluster performance metrics."
+type = bool
+default = true
 }
